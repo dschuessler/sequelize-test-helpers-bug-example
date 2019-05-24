@@ -4,7 +4,7 @@ const models = require("../models");
 export namespace UserService {
   export async function getUserById(userId: number): Promise<any> {
     try {
-      const user = await models.user.findOne({
+      const user = await models.User.findOne({
         where: {
           userId: userId
         }

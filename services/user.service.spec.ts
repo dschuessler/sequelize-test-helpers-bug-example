@@ -13,12 +13,12 @@ describe('UserService', () => {
                         return user;
                     },
                 },
-            });
+            }, 'models');
             const UserService = proxyquire('./user.service', {
                 '../models': mockModels,
             });
 
-            const result = await UserService.getUserById(user.username);
+            const result = await UserService.UserService.getUserById(user.username);
             expect(result, 'user object').to.not.be.undefined;
         });
     });
